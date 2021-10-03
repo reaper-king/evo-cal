@@ -7,28 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css" href="evo-calendar/css/evo-calendar.css" />
-    <link rel="stylesheet" type="text/css" href="evo-calendar/css/evo-calendar.midnight-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="evo-calendar/css/evo-calendar.midnight-blue.css" /> -->
 </head>
 
 <body>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/reaper-king/evo-cal@b1cd9956fdf70214f1420dbf798db9745a0f7e0c/evo-calendar/css/evo-calendar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="evo-calendar/js/evo-calendar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/reaper-king/evo-cal@b1cd9956fdf70214f1420dbf798db9745a0f7e0c/evo-calendar/js/evo-calendar.min.js"></script>
     <div id="calendar"></div>
     <script>
         $(document).ready(function() {
 
-            //     $('#calendar').evoCalendar({
-            //         settingName: settingValue
-            //     })
-            // })
-
             $("#calendar").evoCalendar({
                 calendarEvents: [{
-                    name: "Vacation Leave",
-                    badge: "02/13 - 02/15", // Event badge (optional)
-                    date: ["February/13/2020", "February/15/2020"], // Date range
-                    description: "Vacation leave for 3 days.", // Event description (optional)
+                    name: "Khomas Grove Mall",
+                    badge: "", // Event badge (optional)
+                    date: ["October/13/2021", "October/13/2021"], // Date range
+                    description: "O+ and A+ blood types encouraged to donatate.", // Event description (optional)
+                    type: "event",
+                }, {
+                    name: "Maerua Mall",
+                    badge: "10am - 5pm", // Event badge (optional)
+                    date: ["October/13/2021", "October/13/2021"], // Date range
+                    description: "B- and O+ blood types encouraged to donatate.", // Event description (optional)
                     type: "event",
                 }]
             });
