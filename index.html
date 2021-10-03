@@ -17,22 +17,38 @@
     <script src="https://cdn.jsdelivr.net/gh/reaper-king/evo-cal@b1cd9956fdf70214f1420dbf798db9745a0f7e0c/evo-calendar/js/evo-calendar.min.js"></script>
     <div id="calendar"></div>
     <script>
-        $(document).ready(function() {
+//         $(document).ready(function() {
 
-            $("#calendar").evoCalendar({
-                calendarEvents: [{
-                    name: "Khomas Grove Mall",
-                    badge: "", // Event badge (optional)
-                    date: ["October/13/2021", "October/13/2021"], // Date range
-                    description: "O+ and A+ blood types encouraged to donatate.", // Event description (optional)
-                    type: "event",
-                }, {
-                    name: "Maerua Mall",
-                    badge: "10am - 5pm", // Event badge (optional)
-                    date: ["October/13/2021", "October/13/2021"], // Date range
-                    description: "B- and O+ blood types encouraged to donatate.", // Event description (optional)
-                    type: "event",
-                }]
+//             $("#calendar").evoCalendar({
+//                 calendarEvents: [{
+//                     name: "Khomas Grove Mall",
+//                     badge: "", // Event badge (optional)
+//                     date: ["October/13/2021", "October/13/2021"], // Date range
+//                     description: "O+ and A+ blood types encouraged to donatate.", // Event description (optional)
+//                     type: "event",
+//                 }, {
+//                     name: "Maerua Mall",
+//                     badge: "10am - 5pm", // Event badge (optional)
+//                     date: ["October/13/2021", "October/13/2021"], // Date range
+//                     description: "B- and O+ blood types encouraged to donatate.", // Event description (optional)
+//                     type: "event",
+//                 }]
+//             });
+//         });
+        
+        $(document).ready(function() {
+            let calData;
+            async function fetchMoviesJSON() {
+                const response = await fetch('https://gs-api.vercel.app/data');
+                const sheetData = await response.json();
+                return sheetData;
+            }
+
+            fetchMoviesJSON().then(sheetData => {
+
+                $("#calendar").evoCalendar({
+                    calendarEvents: sheetData
+                });
             });
         });
     </script>
